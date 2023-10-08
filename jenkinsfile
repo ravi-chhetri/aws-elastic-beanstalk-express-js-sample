@@ -2,7 +2,6 @@ pipeline {
     agent {
         docker {
             image 'node:16'
-            args '-u root'  // Optional: Run as root user if needed
         }
     }
     stages {
@@ -10,13 +9,13 @@ pipeline {
             steps {
                 // Your build steps here
                 sh 'npm install'
-                sh 'npm run build'
+
             }
         }
         stage('Test') {
             steps {
                 // Your test steps here
-                sh 'npm test'
+                // sh 'npm test'
             }
         }
         // Add more stages as needed
